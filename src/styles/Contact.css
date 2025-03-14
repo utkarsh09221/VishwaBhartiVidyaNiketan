@@ -1,0 +1,122 @@
+/* General contact page styles */
+.contact-container {
+    padding: 40px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+}
+
+/* Header Section */
+.contact-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-title {
+    font-size: 36px;
+    color: #333;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Contact Form Styles */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: slideInFromLeft 1s ease-out;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 18px;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+/* Contact Information Section */
+.contact-info {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.info-item {
+    text-align: center;
+}
+
+.info-item i {
+    font-size: 36px;
+    color: #4caf50;
+}
+
+.info-item p {
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+
+    .contact-info {
+        flex-direction: column; /* Stack contact info vertically */
+        align-items: center; /* Center align items */
+    }
+}

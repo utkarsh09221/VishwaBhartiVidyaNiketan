@@ -1,0 +1,178 @@
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000; /* Default background color */
+  padding: 0.5rem 1rem;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  height: 80px; /* Adjust height for proper spacing */
+}
+
+body {
+  margin-top: 80px; /* Prevent overlap with fixed navbar */
+}
+
+/* Navbar Container */
+.navbar-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  justify-content: space-between;
+}
+
+/* Logo */
+.navbar-logo img {
+  height: 60px;
+  width: auto;
+  max-width: 150px;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Navbar Links */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navbar-links a {
+  color: #fff; /* Default text color */
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  background-color: #d70000;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #000000; /* Default background color */
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  z-index: 100;
+  border-radius: 4px;
+  width: 100%; /* Change width to 100% for mobile responsiveness */
+}
+
+
+.dropdown-menu li {
+  padding: 0.5rem 1rem;
+}
+
+.dropdown-menu a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Show dropdown on hover for large screens */
+@media (min-width: 769px) {
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+}
+
+/* Ensure dropdown is displayed correctly on mobile */
+@media (max-width: 768px) {
+  .dropdown-menu.show {
+    display: block; /* Ensure dropdown is shown when active */
+  }
+}
+
+
+/* ========== MOBILE RESPONSIVE STYLING ========== */
+@media (max-width: 768px) {
+  .navbar {
+    height: 70px;
+    padding: 0.5rem;
+  }
+
+  .navbar-logo img {
+    height: 50px;
+    max-width: 120px;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 2rem;
+    right: 15px;
+  }
+
+  /* Mobile Menu (Slide Down from Top) */
+  .navbar-links {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    background-color: #222; /* Default background color for mobile menu */
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 20px 0;
+    opacity: 0;
+    transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    z-index: 999;
+  }
+
+  .navbar-links.active {
+    top: 80px; /* Adjust based on navbar height */
+    opacity: 1;
+  }
+
+  .navbar-links a {
+    font-size: 1.2rem;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  /* Dropdown Menu for Mobile */
+  .dropdown-menu {
+    display: none;
+    position: relative;
+    background: #333;
+    width: 100%;
+    text-align: center;
+    box-shadow: none;
+  }
+
+  .dropdown-menu.show {
+    display: block;
+  }
+}

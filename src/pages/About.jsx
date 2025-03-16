@@ -1,167 +1,73 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
 const About = () => {
   return (
-    <div style={styles.container}>
-      {/* Hero Section */}
-      <motion.div
-        style={styles.heroSection}
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1.2 }}
-      >
-<h1 style={styles.heroTitle}>Welcome to Vishwa Bharti Vidya Niketan</h1>
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 px-4">
+      <div className="w-full max-w-3xl bg-white p-10 rounded-lg shadow-lg border-t-4 border-blue-600 text-center">
+        
+        {/* About Us */}
+        <Section 
+          title="About Us" 
+          content="Founded in 1993, Vishwa Bharti Vidya Niketan has been a pillar of quality education for over three decades. We provide a nurturing environment that fosters academic excellence, moral values, and holistic development."
+        />
 
-        <p style={styles.heroSubtitle}>Empowering Young Minds for a Brighter Future</p>
-      </motion.div>
+        {/* Mission */}
+        <Section 
+          title="Our Mission" 
+          content="To provide students with a high-quality education that prepares them for the challenges of the future while instilling strong ethical values, leadership skills, and a lifelong love for learning."
+        />
 
-      {/* About Us Section */}
-      <motion.section
-        style={styles.section}
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <h2 style={styles.sectionTitle}>About Us</h2>
-<p style={styles.sectionContent}>
-          Established in 1993, Vishwa Bharti Vidya Niketan has consistently delivered excellence in education for over 30 years.
+        {/* Vision */}
+        <Section 
+          title="Our Vision" 
+          content="We envision creating responsible, skilled, and innovative individuals who contribute positively to society. Our education system focuses on academic excellence, personal growth, and social responsibility."
+        />
 
-          Our commitment to nurturing young minds has earned us a reputation as one of the leading institutions in the region.
-        </p>
-        <p style={styles.sectionContent}>
-          We pride ourselves on fostering a holistic learning environment where students can thrive academically, socially,
-          and emotionally. Our dedicated faculty and state-of-the-art facilities create an atmosphere of innovation and inspiration.
-        </p>
-      </motion.section>
+        {/* Why Choose Us */}
+        <SectionList
+          title="Why Choose Us?"
+          items={[
+            "Highly Experienced and Qualified Faculty",
+            "Modern Infrastructure with Smart Classrooms",
+            "Focus on Academics, Sports, and Extracurricular Activities",
+            "Safe and Supportive Learning Environment",
+            "Strong Parent-Teacher Collaboration",
+          ]}
+        />
 
-      {/* Mission Section */}
-      <motion.section
-        style={styles.section}
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <h2 style={styles.sectionTitle}>Our Mission</h2>
-        <p style={styles.sectionContent}>
-          To empower students with knowledge, skills, and values that prepare them for future success in a rapidly evolving world.
-          We strive to create a nurturing environment that fosters curiosity, creativity, and lifelong learning.
-        </p>
-      </motion.section>
-
-      {/* Vision Section */}
-      <motion.section
-        style={styles.section}
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <h2 style={styles.sectionTitle}>Our Vision</h2>
-        <p style={styles.sectionContent}>
-          We envision a future where every student emerges as a confident, compassionate, and capable individual,
-          ready to contribute positively to society. Our focus is on holistic development and character building.
-        </p>
-      </motion.section>
-
-      {/* Why Choose Us Section */}
-      <motion.section
-        style={styles.section}
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <h2 style={styles.sectionTitle}>Why Choose Us?</h2>
-        <ul style={styles.listContent}>
-          <li>Highly Qualified and Experienced Faculty</li>
-          <li>State-of-the-Art Infrastructure and Facilities</li>
-          <li>Focus on Academic Excellence and Extracurricular Activities</li>
-          <li>Safe and Inclusive Learning Environment</li>
-          <li>Strong Parent-Teacher Collaboration</li>
-        </ul>
-      </motion.section>
-
-      {/* Contact Section */}
-      <motion.section
-        style={styles.contactSection}
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <h2 style={styles.contactTitle}>Contact Us</h2>
-        <p style={styles.contactContent}>We would love to hear from you. Reach out to us for any inquiries or information:</p>
-        <ul style={styles.contactList}>
-          <li>Email: info@vishabharti.com</li>
-          <li>Phone: +123-456-7890</li>
-<li>Address: 123 School Lane, Vidya City</li>
-
-        </ul>
-      </motion.section>
+        {/* Contact */}
+        <div className="mt-6 p-6 bg-blue-700 text-white rounded-md text-center">
+          <h2 className="text-2xl font-semibold">Contact Us</h2>
+          <p className="mt-2">We are always available to assist you. Reach out to us for inquiries.</p>
+          <ul className="mt-3 space-y-2">
+            <li>Email: info@vishabharti.com</li>
+            <li>Phone: +123-456-7890</li>
+            <li>Address: 123 School Lane, Vidya City</li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };
 
-const styles = {
-  container: {
-    padding: '40px',
-    maxWidth: '1200px',
-    margin: 'auto',
-    textAlign: 'center',
-  },
-  heroSection: {
-    background: 'linear-gradient(135deg, #007bff, #6a11cb)',
-    color: '#fff',
-    padding: '60px 20px',
-    borderRadius: '12px',
-  },
-  heroTitle: {
-    fontSize: '3em',
-    fontWeight: 'bold',
-  },
-  heroSubtitle: {
-    fontSize: '1.5em',
-    marginTop: '10px',
-  },
-  section: {
-    background: '#f9f9f9',
-    padding: '30px',
-    margin: '20px 0',
-    borderRadius: '8px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-  },
-  sectionTitle: {
-    fontSize: '2em',
-    color: '#007bff',
-    marginBottom: '10px',
-  },
-  sectionContent: {
-    fontSize: '1.2em',
-    color: '#333',
-  },
-  listContent: {
-    textAlign: 'left',
-    fontSize: '1.1em',
-    color: '#555',
-    paddingLeft: '40px',
-  },
-  contactSection: {
-    background: '#007bff',
-    color: '#fff',
-    padding: '30px',
-    borderRadius: '8px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
-  },
-  contactTitle: {
-    fontSize: '2em',
-    color: '#fff',
-  },
-  contactContent: {
-    fontSize: '1.2em',
-    marginBottom: '10px',
-  },
-  contactList: {
-    listStyleType: 'none',
-    padding: 0,
-  },
-};
+// Reusable Section Component
+const Section = ({ title, content }) => (
+  <div className="mt-6 text-left">
+    <h2 className="text-2xl font-semibold text-blue-700">{title}</h2>
+    <p className="text-gray-700 mt-2">{content}</p>
+  </div>
+);
+
+// Reusable List Component (Fix for Bullet Points Alignment)
+const SectionList = ({ title, items }) => (
+  <div className="mt-6 text-center">
+    <h2 className="text-2xl font-semibold text-blue-700">{title}</h2>
+    <ul className="list-disc list-inside text-gray-700 mt-2 mx-auto inline-block text-left space-y-1">
+      {items.map((item, index) => (
+        <li key={index}>{item}</li>
+      ))}
+    </ul>
+  </div>
+);
 
 export default About;

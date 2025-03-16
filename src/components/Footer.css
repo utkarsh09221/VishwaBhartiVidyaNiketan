@@ -1,9 +1,16 @@
 /* Footer Styles */
 footer {
-  background-color: #333;
+  background-color: #006666;
   color: #fff;
   padding: 40px 20px;
   text-align: center;
+}
+.footer-section h3 {
+  color: #fae5d3; /* Updated heading color */
+  font-size: 48px; /* Increased font size */
+  font-weight: 900; /* Extra bold */
+  text-transform: uppercase;
+  margin-bottom: 15px;
 }
 
 /* Footer Container */

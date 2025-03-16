@@ -15,7 +15,7 @@ import RulesReg from './pages/RulesReg'; // Importing RulesReg component
 import './App.css';
 import admissionImage from './assets/admission.png';
 import headerImage from './assets/headerImage.jpg'; // Importing the header image
-import { color } from 'framer-motion';
+
 
 
 

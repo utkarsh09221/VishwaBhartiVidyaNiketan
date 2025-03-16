@@ -84,10 +84,13 @@ const Footer = () => {
       {/* Footer Bottom */}
       <div className="footer-bottom">
         <p>© 2025 Vishwa Bharti Vidya Niketan School, Street number 6, Desraj Colony, Panipat. All rights reserved.</p>
-        <p><strong>Developed By:</strong> Utkarsh Kumar Singh</p>
+        <p><strong>Developed By:</strong> Mr. Utkarsh Kumar Singh</p>
       </div>
     </footer>
   );
 };
 
 export default Footer;
+
+
+

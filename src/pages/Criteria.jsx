@@ -36,23 +36,23 @@ const admissionCriteria = [
 
 const AdmissionCriteria = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-r from-blue-500 to-green-500 py-10 px-5 flex justify-center">
-      <div className="max-w-4xl w-full bg-white p-8 rounded-2xl shadow-2xl">
-        <h1 className="text-4xl font-bold text-center text-blue-700 mb-8">📋 Admission Criteria</h1>
+    <div className="min-h-screen bg-gradient-to-b from-blue-600 to-green-500 py-12 px-6 flex justify-center items-center">
+      <div className="max-w-3xl w-full bg-white p-10 rounded-3xl shadow-2xl">
+        <h1 className="text-4xl font-extrabold text-center text-blue-700 mb-10">📋 Admission Criteria</h1>
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="space-y-8"
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="space-y-10"
         >
           {admissionCriteria.map((criteria, index) => (
-            <div key={index} className="border-l-4 border-blue-500 p-6 flex items-start gap-6">
-              <FaClipboardCheck className="text-blue-500 text-3xl mt-1" />
+            <div key={index} className="border-l-8 border-blue-500 p-6 flex items-start gap-6 bg-gray-50 rounded-xl shadow-md">
+              <FaClipboardCheck className="text-blue-600 text-4xl mt-1" />
               <div>
-                <h2 className="text-2xl font-semibold text-gray-800">{criteria.title}</h2>
-                <ul className="list-disc list-inside text-gray-700 mt-3 space-y-1">
+                <h2 className="text-2xl font-semibold text-gray-900">{criteria.title}</h2>
+                <ul className="list-disc list-inside text-gray-700 mt-3 space-y-2">
                   {criteria.items.map((item, i) => (
-                    <li key={i} className="pl-4 relative before:absolute before:left-0 before:top-1/2 before:h-2 before:w-2 before:bg-blue-500 before:rounded-full before:-translate-y-1/2">
+                    <li key={i} className="relative pl-5 before:absolute before:left-0 before:top-1/2 before:h-3 before:w-3 before:bg-blue-500 before:rounded-full before:-translate-y-1/2">
                       {item}
                     </li>
                   ))}

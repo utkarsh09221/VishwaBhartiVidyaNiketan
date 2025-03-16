@@ -4,13 +4,6 @@ import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 
 const notices = [
   { text: "Date: 11-03-2025 - School will remain closed on Friday.", pdf: "/files/admission.pdf" },
-  { text: "Date: 12-03-2025 - Admission forms are now available online.", pdf: "/files/notice2.pdf" },
-  { text: "Date: 13-03-2025 - Parent-teacher meeting scheduled for next week.", pdf: "/files/notice3.pdf" },
-  { text: "Date: 14-03-2025 - Sports Day registration deadline extended.", pdf: "/files/notice4.pdf" },
-  { text: "Date: 15-03-2025 - Winter vacation starts next Monday.", pdf: "/files/notice5.pdf" },
-  { text: "Date: 16-03-2025 - Classes will resume after the holidays.", pdf: "/files/notice6.pdf" },
-  { text: "Date: 17-03-2025 - New syllabus for next semester is uploaded.", pdf: "/files/notice7.pdf" },
-  { text: "Date: 18-03-2025 - Science fair registrations open today.", pdf: "/files/notice8.pdf" },
 ];
 
 const NoticeScroller = () => {
@@ -19,7 +12,6 @@ const NoticeScroller = () => {
   const autoScrollRef = useRef(null);
   const manualScrollRef = useRef(false);
 
-  // Function to start auto-scroll
   const startAutoScroll = () => {
     stopAutoScroll();
     autoScrollRef.current = setInterval(() => {
@@ -29,7 +21,6 @@ const NoticeScroller = () => {
     }, 5000);
   };
 
-  // Function to stop auto-scroll
   const stopAutoScroll = () => {
     if (autoScrollRef.current) {
       clearInterval(autoScrollRef.current);
@@ -41,18 +32,14 @@ const NoticeScroller = () => {
     return () => stopAutoScroll();
   }, []);
 
-  // Circular scrolling function
   const handleScroll = (direction) => {
     stopAutoScroll();
     manualScrollRef.current = true;
 
     setCurrentIndex((prevIndex) => {
       let newIndex = prevIndex + direction;
-      
-      // Circular scrolling logic
       if (newIndex < 0) newIndex = notices.length - 1;
       if (newIndex >= notices.length) newIndex = 0;
-
       return newIndex;
     });
 
@@ -66,11 +53,11 @@ const NoticeScroller = () => {
     <div
       className="notice-scroller-container"
       style={{
-        backgroundColor: "#ffffff",
+        backgroundColor: "#e9ecef",
         padding: "20px",
         borderRadius: "12px",
-        border: "1px solid #ddd",
-        boxShadow: "0 4px 10px rgba(0, 0, 0, 0.15)",
+        border: "1px solid #adb5bd",
+        boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
         maxWidth: "500px",
         width: "100%",
         margin: "20px auto",
@@ -82,26 +69,24 @@ const NoticeScroller = () => {
         justifyContent: "space-between",
       }}
     >
-      {/* Scroll Up Button */}
       <button
         onClick={() => handleScroll(-1)}
         style={{
-          backgroundColor: "#007bff",
+          backgroundColor: "#495057",
           border: "none",
           padding: "8px 14px",
           borderRadius: "6px",
           cursor: "pointer",
-          color: "white",
+          color: "#ffffff",
           fontSize: "18px",
           transition: "background 0.3s",
         }}
-        onMouseOver={(e) => (e.target.style.backgroundColor = "#0056b3")}
-        onMouseOut={(e) => (e.target.style.backgroundColor = "#007bff")}
+        onMouseOver={(e) => (e.target.style.backgroundColor = "#343a40")}
+        onMouseOut={(e) => (e.target.style.backgroundColor = "#495057")}
       >
         <FaChevronUp />
       </button>
 
-      {/* Notices List */}
       <div
         style={{
           display: "flex",
@@ -115,7 +100,7 @@ const NoticeScroller = () => {
       >
         <AnimatePresence>
           {Array.from({ length: noticesToShow }).map((_, i) => {
-            const noticeIndex = (currentIndex + i) % notices.length; // Wraps around
+            const noticeIndex = (currentIndex + i) % notices.length;
             const notice = notices[noticeIndex];
 
             return (
@@ -128,7 +113,7 @@ const NoticeScroller = () => {
                 style={{
                   fontSize: "16px",
                   fontWeight: "bold",
-                  color: "#0056b3",
+                  color: "#212529",
                   textAlign: "center",
                   padding: "8px 12px",
                   width: "90%",
@@ -141,7 +126,7 @@ const NoticeScroller = () => {
                   href={notice.pdf}
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ textDecoration: "none", color: "#0056b3" }}
+                  style={{ textDecoration: "none", color: "#0d6efd" }}
                 >
                   {notice.text}
                 </a>
@@ -151,21 +136,20 @@ const NoticeScroller = () => {
         </AnimatePresence>
       </div>
 
-      {/* Scroll Down Button */}
       <button
         onClick={() => handleScroll(1)}
         style={{
-          backgroundColor: "#007bff",
+          backgroundColor: "#495057",
           border: "none",
           padding: "8px 14px",
           borderRadius: "6px",
           cursor: "pointer",
-          color: "white",
+          color: "#ffffff",
           fontSize: "18px",
           transition: "background 0.3s",
         }}
-        onMouseOver={(e) => (e.target.style.backgroundColor = "#0056b3")}
-        onMouseOut={(e) => (e.target.style.backgroundColor = "#007bff")}
+        onMouseOver={(e) => (e.target.style.backgroundColor = "#343a40")}
+        onMouseOut={(e) => (e.target.style.backgroundColor = "#495057")}
       >
         <FaChevronDown />
       </button>

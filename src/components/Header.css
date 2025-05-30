@@ -1,4 +1,4 @@
-/* ========== NAVBAR STYLING ========== */
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -132,13 +132,13 @@ body {
 /* ========== MOBILE RESPONSIVE STYLING ========== */
 @media (max-width: 768px) {
   .navbar {
-    height: 70px;
-    padding: 0.5rem;
+    height: 80px;
+    padding: 0.5rem 1rem;
   }
 
   .navbar-logo img {
-    height: 50px;
-    max-width: 120px;
+    height: 60px;
+    max-width: 150px;
   }
 
   .hamburger {

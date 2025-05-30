@@ -1,218 +1,169 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion"; // Ensure framer-motion is installed
-import contactImage from "../assets/contact.png"; // Import the contact image
+import { motion } from "framer-motion";
+import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
+import { Card, CardGroup } from "react-bootstrap";
 
-const ContactForm = () => {
+const ContactPage = () => {
   const [formData, setFormData] = useState({
-    fullName: "",
-    companyName: "",
+    firstName: "",
+    lastName: "",
     email: "",
-    phoneNumber: "",
-    message: ""
+    phone: "",
+    topic: "",
+    orderNumber: "",
+    salonName: "",
+    message: "",
   });
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(formData.email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
     console.log("Form submitted", formData);
+    alert("Thank you for your message! We will get back to you soon.");
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "flex-start",
-        padding: "40px",
-        maxWidth: "1200px",
-        margin: "auto",
-        flexWrap: "wrap"
-      }}
-    >
-      {/* Left Image Section */}
+    <div className="flex flex-col items-center bg-gray-100 py-10 px-5">
+      {/* Contact Info Section */}
+      <CardGroup className="mb-10">
+        <Card className="text-center p-4 shadow-lg">
+          <Card.Body>
+            <FaEnvelope className="text-blue-600 text-3xl mb-3" />
+            <Card.Title className="text-lg font-semibold">Email Address</Card.Title>
+            <Card.Text>info@example.com<br />support@example.com</Card.Text>
+          </Card.Body>
+        </Card>
+        <Card className="text-center p-4 shadow-lg">
+          <Card.Body>
+            <FaPhoneAlt className="text-green-600 text-3xl mb-3" />
+            <Card.Title className="text-lg font-semibold">Phone Number</Card.Title>
+            <Card.Text>+88 (800) 123 4567<br />+99 094 5445 433</Card.Text>
+          </Card.Body>
+        </Card>
+        <Card className="text-center p-4 shadow-lg">
+          <Card.Body>
+            <FaMapMarkerAlt className="text-red-600 text-3xl mb-3" />
+            <Card.Title className="text-lg font-semibold">Our Address</Card.Title>
+            <Card.Text>82 12th Street, Office 14<br />Edinburgh, UK</Card.Text>
+          </Card.Body>
+        </Card>
+      </CardGroup>
+
+      {/* Contact Form */}
       <motion.div
-        style={{
-          flex: 1,
-          maxWidth: "45%",
-          textAlign: "center",
-          marginBottom: "20px"
-        }}
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
+        className="w-full max-w-3xl bg-white p-8 rounded-lg shadow-lg"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        <img
-          src={contactImage}
-          alt="Contact Illustration"
-          style={{
-            width: "100%",
-            maxWidth: "400px",
-            height: "auto",
-            borderRadius: "10px",
-            boxShadow: "0 4px 8px rgba(0, 0, 0, 0.15)"
-          }}
-        />
-      </motion.div>
+        <h2 className="text-center text-blue-600 text-sm font-semibold">Contact Us</h2>
+        <h1 className="text-center text-2xl font-bold mb-4">How Can We Help You?</h1>
 
-      {/* Right Form Section */}
-      <motion.div
-        style={{
-          flex: 1,
-          maxWidth: "45%",
-          background: "#f9f9f9",
-          padding: "30px",
-          borderRadius: "10px",
-          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)"
-        }}
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <h1 style={{ fontSize: "28px", fontWeight: "bold", marginBottom: "10px" }}>Contact Us</h1>
-        <p style={{ marginBottom: "20px" }}>
-          Not sure what you need? The team at Square Events will be happy to
-          listen to you and suggest event ideas you hadn't considered.
-        </p>
-
-        <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ marginBottom: "15px" }}>
-            <label htmlFor="fullName" style={{ display: "block", fontWeight: "bold", marginBottom: "5px" }}>
-              Full Name
-            </label>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="grid grid-cols-1 gap-4">
             <input
               type="text"
-              id="fullName"
-              name="fullName"
-              value={formData.fullName}
+              name="firstName"
+              placeholder="*First Name"
+              value={formData.firstName}
               onChange={handleChange}
               required
-              style={{
-                width: "100%",
-                padding: "10px",
-                border: "1px solid #ddd",
-                borderRadius: "5px",
-                fontSize: "14px"
-              }}
+              className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-          </div>
 
-          <div style={{ marginBottom: "15px" }}>
-            <label htmlFor="companyName" style={{ display: "block", fontWeight: "bold", marginBottom: "5px" }}>
-              Company Name
-            </label>
             <input
               type="text"
-              id="companyName"
-              name="companyName"
-              value={formData.companyName}
+              name="lastName"
+              placeholder="*Last Name"
+              value={formData.lastName}
               onChange={handleChange}
-              style={{
-                width: "100%",
-                padding: "10px",
-                border: "1px solid #ddd",
-                borderRadius: "5px",
-                fontSize: "14px"
-              }}
+              required
+              className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-          </div>
 
-          <div style={{ marginBottom: "15px" }}>
-            <label htmlFor="email" style={{ display: "block", fontWeight: "bold", marginBottom: "5px" }}>
-              Email
-            </label>
             <input
               type="email"
-              id="email"
               name="email"
+              placeholder="*Email"
               value={formData.email}
               onChange={handleChange}
               required
-              style={{
-                width: "100%",
-                padding: "10px",
-                border: "1px solid #ddd",
-                borderRadius: "5px",
-                fontSize: "14px"
-              }}
+              className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-          </div>
 
-          <div style={{ marginBottom: "15px" }}>
-            <label htmlFor="phoneNumber" style={{ display: "block", fontWeight: "bold", marginBottom: "5px" }}>
-              Phone Number
-            </label>
             <input
-              type="tel"
-              id="phoneNumber"
-              name="phoneNumber"
-              value={formData.phoneNumber}
+              type="text"
+              name="phone"
+              placeholder="Phone Number (optional)"
+              value={formData.phone}
               onChange={handleChange}
-              style={{
-                width: "100%",
-                padding: "10px",
-                border: "1px solid #ddd",
-                borderRadius: "5px",
-                fontSize: "14px"
-              }}
+              className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-          </div>
 
-          <div style={{ marginBottom: "15px" }}>
-            <label htmlFor="message" style={{ display: "block", fontWeight: "bold", marginBottom: "5px" }}>
-              Your Message
-            </label>
+            <select
+              name="topic"
+              value={formData.topic}
+              onChange={handleChange}
+              required
+              className="w-full p-3 border border-gray-300 rounded bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              <option value="">*Select your topic</option>
+              <option value="General Inquiry">General Inquiry</option>
+              <option value="Support">Support</option>
+              <option value="Feedback">Feedback</option>
+              <option value="Other">Other</option>
+            </select>
+
+            <input
+              type="text"
+              name="orderNumber"
+              placeholder="Order Number (optional)"
+              value={formData.orderNumber}
+              onChange={handleChange}
+              className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+
+            <input
+              type="text"
+              name="salonName"
+              placeholder="Salon Name (if applicable)"
+              value={formData.salonName}
+              onChange={handleChange}
+              className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+
             <textarea
-              id="message"
               name="message"
+              placeholder="*Message"
               value={formData.message}
               onChange={handleChange}
               required
-              style={{
-                width: "100%",
-                padding: "10px",
-                border: "1px solid #ddd",
-                borderRadius: "5px",
-                fontSize: "14px",
-                height: "100px"
-              }}
+              className="w-full p-3 border border-gray-300 rounded h-24 focus:outline-none focus:ring-2 focus:ring-blue-500"
             ></textarea>
-          </div>
 
-          <button
-            type="submit"
-            style={{
-              backgroundColor: "#007bff",
-              color: "white",
-              border: "none",
-              padding: "12px",
-              borderRadius: "5px",
-              cursor: "pointer",
-              transition: "background-color 0.3s"
-            }}
-            onMouseOver={(e) => (e.target.style.backgroundColor = "#0056b3")}
-            onMouseOut={(e) => (e.target.style.backgroundColor = "#007bff")}
-          >
-            Get In Touch
-          </button>
+            <button
+              type="submit"
+              className="w-full bg-black text-white p-3 rounded hover:bg-gray-900 transition text-lg font-semibold"
+            >
+              SUBMIT
+            </button>
+          </div>
         </form>
       </motion.div>
-
-      {/* Responsive Design */}
-      <style>{`
-        @media only screen and (max-width: 600px) {
-          div[style*="display: flex"] {
-            flex-direction: column;
-          }
-          img {
-            max-width: 100%;
-          }
-        }
-      `}</style>
     </div>
   );
 };
 
-export default ContactForm;
+export default ContactPage;

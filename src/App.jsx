@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './components/HomePage';
+import SmartClasses from './pages/SmartClasses'; // Importing SmartClasses component
+
 import Contact from './pages/Contact'; // Contact page will be shown on /contact route
 import About from './pages/About'; // About page will be shown on /about route
 import Gallery from './pages/Gallery';
@@ -16,8 +18,9 @@ import './App.css';
 import admissionImage from './assets/admission.png';
 import headerImage from './assets/headerImage.jpg'; // Importing the header image
 
-
-
+import ComputerLab from './pages/ComputerLab';
+import ScienceLab from './pages/ScienceLab';
+import More from './pages/More.jsx';
 
 function App() {
   const [showPreloader, setShowPreloader] = useState(true);
@@ -50,8 +53,6 @@ function App() {
                 <div className="mozart">
                   <div className="mozart-inner">Bharti Vidhya Niketan</div>
                   <div className="mozart-inner" style={{ fontSize: "25px", color: "#2471a3  " }}>30+ years of Excellence</div>
-
-
                 </div>
               </div>
             </div>
@@ -129,7 +130,7 @@ function App() {
         )}
 
         {/* Main Content Area with Routing */}
-        <div style={{ flex: 1 }}>
+        <div style={{ flex: 1, paddingTop: '80px' }}>
           <Routes>
             {/* The Home route, this is your homepage */}
             <Route path="/" element={<HomePage />} />
@@ -146,8 +147,10 @@ function App() {
             <Route path="/fee-payment" element={<FeePayment />} /> {/* Route for Fee Payment */}
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/rules" element={<RulesReg />} />
-       
-
+            <Route path="/smart-classes" element={<SmartClasses />} /> 
+            <Route path="/computer-lab" element={<ComputerLab />} /> 
+            <Route path="/science-lab" element={<ScienceLab />} />
+            <Route path="/facilities-more" element={<More/>} />
           </Routes>
         </div>
 

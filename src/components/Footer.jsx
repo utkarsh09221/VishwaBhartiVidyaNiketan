@@ -11,11 +11,11 @@ const Footer = () => {
           <i className="fab fa-facebook icon"></i>
         </a>
         <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-twitter icon"></i>
+          <i className="fab fa-youtube icon"></i>
         </a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+        {/* <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
           <i className="fab fa-linkedin icon"></i>
-        </a>
+        </a> */}
         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
           <i className="fab fa-instagram icon"></i>
         </a> 
@@ -67,16 +67,18 @@ const Footer = () => {
         <div className="footer-section">
           <h3>Information For</h3>
           <ul>
-            <li>Prospective Students</li>
-            <li><Link to="/academics">Academics</Link></li>
-            <li><Link to="/admissions">Admissions</Link></li>
+            <li><Link to="/criteria">Admissions Criteria</Link></li>
+            <li><Link to="/fee-structure" >Fee Structure</Link></li>
+            <li><Link to="/fee-payment" >Online Payment</Link></li>
           </ul>
         </div>
 
         <div className="footer-section">
           <h3>School</h3>
           <ul>
-            <li>Rules & Regulation</li>
+          <li><Link to="/rules" >Rules & Regulations</Link></li>
+            <li><Link to="/book-lists" >Book Lists</Link></li>
+            <li><Link to="/uniform">Uniform Code</Link></li>
           </ul>
         </div>
       </div>

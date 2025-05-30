@@ -50,18 +50,6 @@ const Navbar = () => {
           )}
 
           <li className="dropdown">
-            <button className="dropdown-toggle" onClick={() => toggleDropdown("academics")}>
-              ACADEMICS
-            </button>
-            <ul className={`dropdown-menu ${openDropdown === "academics" ? "show" : ""}`}>
-              <li><Link to="/syllabus" onClick={closeMenu}>Syllabus</Link></li>
-              <li><Link to="/book-lists" onClick={closeMenu}>Book Lists</Link></li>
-              <li><Link to="/projects" onClick={closeMenu}>Projects</Link></li>
-              <li><Link to="/results" onClick={closeMenu}>Results</Link></li>
-            </ul>
-          </li>
-
-          <li className="dropdown">
             <button className="dropdown-toggle" onClick={() => toggleDropdown("admission")}>
               ADMISSION
             </button>
@@ -73,6 +61,19 @@ const Navbar = () => {
               <li><Link to="/rules" onClick={closeMenu}>Rules & Regulations</Link></li>
             </ul>
           </li>
+
+          <li className="dropdown">
+            <button className="dropdown-toggle" onClick={() => toggleDropdown("academics")}>
+              ACADEMICS
+            </button>
+            <ul className={`dropdown-menu ${openDropdown === "academics" ? "show" : ""}`}>
+              <li><Link to="/syllabus" onClick={closeMenu}>Syllabus</Link></li>
+              <li><Link to="/book-lists" onClick={closeMenu}>Book Lists</Link></li>
+              <li><Link to="/projects" onClick={closeMenu}>Projects</Link></li>
+              <li><Link to="/results" onClick={closeMenu}>Results</Link></li>
+            </ul>
+          </li>
+
 
           <li className="dropdown">
             <button className="dropdown-toggle" onClick={() => toggleDropdown("facilities")}>

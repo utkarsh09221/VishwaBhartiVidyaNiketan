@@ -9,6 +9,7 @@ html, body {
   height: 100%;
   width: 100%;
   font-family: 'Arial', sans-serif;
+  
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
@@ -94,36 +95,51 @@ body.loaded #preloader {
 
 /* Responsive Media Queries */
 @media (max-width: 768px) {
-  #preloader {
-    background-size: cover;
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    overflow-x: hidden;
   }
+
+  #preloader {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #preloader img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    z-index: -1; /* Ensure it stays in the background if needed */
+  }
+
 
   .title {
     font-size: 6vw;
-    padding: 0 10px; /* Adjusts padding to avoid overflow */
-  }
-
-  .cafe-inner,
-  .mozart-inner {
-    font-size: 5vw;
-  }
-}
-
-@media (max-width: 480px) {
-  .title {
-    font-size: 5vw;
-    padding: 0 10px; /* Ensures text stays within the screen */
-  }
-
-  #preloader {
-    flex-direction: column;
-    justify-content: space-around;
-  }
-
-  img {
+    line-height: 1.2;
+    padding: 0;
+    margin: 0 auto;
     width: 100%;
-    height: auto;
-    
+    text-align: center;
   }
-  
+
+  .title-inner, .cafe-inner, .mozart-inner {
+    font-size: 5vw;
+    padding: 0;
+    margin: 0;
+  }
 }

@@ -28,110 +28,107 @@ const HomePage = () => {
         }}
       />
 
-
-<div
-  style={{
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    alignItems: 'flex-start',
-    marginTop: '30px',
-    padding: '10px',
-    gap: '20px',
-  }}
->
-  <div
-    style={{
-      display: 'flex',
-      flexWrap: 'wrap',
-      border: '1px solid #ddd',
-      borderRadius: '12px',
-      overflow: 'hidden',
-      boxShadow: '0 6px 12px rgba(0, 0, 0, 0.1)',
-      width: '100%',
-      maxWidth: '900px',
-      backgroundColor: '#ffffff',
-      alignItems: 'center',
-      margin: 'auto',
-      padding: '20px',
-      gap: '20px',
-      flexDirection: 'row',
-    }}
-  >
-    {/* Image Section */}
-    <div style={{ flex: '1 1 300px', textAlign: 'center' }}>
-      <img
-        src={nanaji}
-        alt="Dr. Mahavir Singh"
-        style={{
-          width: '100%',
-          maxWidth: '300px',
-          height: 'auto',
-          borderRadius: '8px',
-          objectFit: 'cover',
-        }}
-      />
       <div
         style={{
-          marginTop: '10px',
-          fontWeight: '600',
-          fontSize: '18px',
-          color: '#333',
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+          alignItems: 'flex-start',
+          marginTop: '30px',
+          padding: '10px',
+          gap: '20px',
         }}
       >
-        Dr. Mahavir Singh
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            border: '1px solid #ddd',
+            borderRadius: '12px',
+            overflow: 'hidden',
+            boxShadow: '0 6px 12px rgba(0, 0, 0, 0.1)',
+            width: '100%',
+            maxWidth: '900px',
+            backgroundColor: '#ffffff',
+            alignItems: 'center',
+            margin: 'auto',
+            padding: '20px',
+            gap: '20px',
+            flexDirection: 'row',
+          }}
+        >
+          {/* Image Section */}
+          <div style={{ flex: '1 1 300px', textAlign: 'center' }}>
+            <img
+              src={nanaji}
+              alt="Dr. Mahavir Singh"
+              style={{
+                width: '100%',
+                maxWidth: '300px',
+                height: 'auto',
+                borderRadius: '8px',
+                objectFit: 'cover',
+              }}
+            />
+            <div
+              style={{
+                marginTop: '10px',
+                fontWeight: '600',
+                fontSize: '18px',
+                color: '#333',
+              }}
+            >
+              Dr. Mahavir Singh
+            </div>
+          </div>
+
+          {/* Text Section */}
+          <div style={{ flex: '2 1 500px', textAlign: 'center' }}>
+            <h3
+              style={{
+                marginBottom: '12px',
+                fontSize: '22px',
+                color: '#333',
+                fontWeight: '700',
+                borderBottom: '2px solid #007bff',
+                paddingBottom: '5px',
+                display: 'inline-block',
+              }}
+            >
+              Founder’s Message
+            </h3>
+            <p
+              style={{
+                fontSize: '16px',
+                lineHeight: '1.7',
+                color: '#555',
+                textAlign: 'justify',
+              }}
+            >
+              Education is the foundation of a brighter future. At
+              <strong style={{ color: '#007bff' }}> Vishwa Bharti Vidya Niketan</strong>,
+              we strive to nurture young minds with knowledge, values, and innovation.
+              Our mission is to create a learning environment that inspires curiosity
+              and excellence. With dedicated educators and a strong vision, we prepare
+              students for success in life. Together, let’s shape a world of wisdom and
+              opportunity.
+            </p>
+          </div>
+        </div>
+
+        {/* Right Side - NoticeScroller Section */}
+        <div
+          style={{
+            width: '28%',
+            minWidth: '300px',
+            marginTop: '20px',
+            textAlign: 'center',
+          }}
+        >
+          <h3 style={{ fontSize: '28px' }}>Important Notices</h3>
+          <NoticeScroller />
+        </div>
       </div>
-    </div>
-
-    {/* Text Section */}
-    <div style={{ flex: '2 1 500px', textAlign: 'center' }}>
-      <h3
-        style={{
-          marginBottom: '12px',
-          fontSize: '22px',
-          color: '#333',
-          fontWeight: '700',
-          borderBottom: '2px solid #007bff',
-          paddingBottom: '5px',
-          display: 'inline-block',
-        }}
-      >
-        Founder’s Message
-      </h3>
-      <p
-        style={{
-          fontSize: '16px',
-          lineHeight: '1.7',
-          color: '#555',
-          textAlign: 'justify',
-        }}
-      >
-        Education is the foundation of a brighter future. At
-        <strong style={{ color: '#007bff' }}> Vishwa Bharti Vidya Niketan</strong>,
-        we strive to nurture young minds with knowledge, values, and innovation.
-        Our mission is to create a learning environment that inspires curiosity
-        and excellence. With dedicated educators and a strong vision, we prepare
-        students for success in life. Together, let’s shape a world of wisdom and
-        opportunity.
-      </p>
-    </div>
-  </div>
-
-  {/* Right Side - NoticeScroller Section */}
-  <div
-    style={{
-      width: '28%',
-      minWidth: '300px',
-      marginTop: '20px',
-      textAlign: 'center',
-    }}
-  >
-    <h3 style={{ fontSize: '28px' }}>Important Notices</h3>
-    <NoticeScroller />
-  </div>
-</div>
-
-
 
       {/* Cards Section */}
       <div className="card-container">
@@ -251,8 +248,8 @@ const HomePage = () => {
             style={{ height: "400px", objectFit: "cover" }}
           />
           <Carousel.Caption>
-            <h3>First Slide Label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            {/* <h3>First Slide Label</h3>
+            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> */}
           </Carousel.Caption>
         </Carousel.Item>
 
@@ -264,8 +261,8 @@ const HomePage = () => {
             style={{ height: "400px", objectFit: "cover" }}
           />
           <Carousel.Caption>
-            <h3>Second Slide Label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            {/* <h3>Second Slide Label</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> */}
           </Carousel.Caption>
         </Carousel.Item>
 
@@ -277,8 +274,8 @@ const HomePage = () => {
             style={{ height: "400px", objectFit: "cover" }}
           />
           <Carousel.Caption>
-            <h3>Third Slide Label</h3>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            {/* <h3>Third Slide Label</h3>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> */}
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
@@ -289,46 +286,46 @@ const HomePage = () => {
 
         {/* First Row: YouTube Video and Upcoming Event */}
         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '20px', marginTop: '30px' }}>
-  {/* YouTube Video */}
-  <iframe 
-    width="100%" 
-    height="315"
-    src="https://www.youtube.com/embed/ClzPF3mlQPc?si=Xw1-gYQhDNAUf4Fe"
-    title="YouTube video player"
-    frameBorder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    referrerPolicy="strict-origin-when-cross-origin"
-    allowFullScreen
-    style={{ 
-      flex: '1 1 48%', 
-      maxWidth: '500px', 
-      borderRadius: '10px', 
-      boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-      minWidth: '280px'
-    }}
-  />
+          {/* YouTube Video */}
+          <iframe 
+            width="100%" 
+            height="315"
+            src="https://www.youtube.com/embed/ClzPF3mlQPc?si=Xw1-gYQhDNAUf4Fe"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            style={{ 
+              flex: '1 1 48%', 
+              maxWidth: '500px', 
+              borderRadius: '10px', 
+              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+              minWidth: '280px'
+            }}
+          />
 
-  {/* Upcoming Event Box */}
-  <div 
-    style={{ 
-      flex: '1 1 48%', 
-      maxWidth: '500px', 
-      padding: '20px', 
-      backgroundColor: '#f5f5f5', 
-      borderRadius: '10px', 
-      boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-      minWidth: '280px',
-      textAlign: 'center'
-    }}
-  >
-    <h3 style={{ marginBottom: '10px', fontSize: '22px', fontWeight: 'bold', color: '#333' }}>📅 Upcoming Event</h3>
-    <p style={{ fontSize: '16px', color: '#555' }}>Join us for an exciting event filled with learning and networking opportunities.</p>
-  </div>
-</div>
+          {/* Upcoming Event Box */}
+          <div 
+            style={{ 
+              flex: '1 1 48%', 
+              maxWidth: '500px', 
+              padding: '20px', 
+              backgroundColor: '#f5f5f5', 
+              borderRadius: '10px', 
+              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+              minWidth: '280px',
+              textAlign: 'center'
+            }}
+          >
+            <h3 style={{ marginBottom: '10px', fontSize: '22px', fontWeight: 'bold', color: '#333' }}>📅 Upcoming Event</h3>
+            <p style={{ fontSize: '16px', color: '#555' }}>Join us for an exciting event filled with learning and networking opportunities.</p>
+          </div>
+        </div>
 
         {/* Second Row: Remaining News Items */}
         <div
-           style={{
+          style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
             gap: '20px',
@@ -343,28 +340,28 @@ const HomePage = () => {
             { imgSrc: n3},
           ].map((newsItem, index) => (
             <div
-      key={index}
-      style={{
-        borderRadius: '10px',
-        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-        overflow: 'hidden',
-        width: '100%',
-        height: 'auto', // Allow height to adjust dynamically
-      }}
-    >
-      <img
-        src={newsItem.imgSrc}
-        style={{
-          width: '100%',
-          height: '100%',
-          objectFit: 'contain', // Ensures the full image is visible without cropping
-          borderRadius: '10px',
-          display: 'block', // Prevents unwanted spacing
-        }}
-      />
-    </div>
-  ))}
-</div>
+              key={index}
+              style={{
+                borderRadius: '10px',
+                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                overflow: 'hidden',
+                width: '100%',
+                height: 'auto', // Allow height to adjust dynamically
+              }}
+            >
+              <img
+                src={newsItem.imgSrc}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'contain', // Ensures the full image is visible without cropping
+                  borderRadius: '10px',
+                  display: 'block', // Prevents unwanted spacing
+                }}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );

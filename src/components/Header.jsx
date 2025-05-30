@@ -17,6 +17,7 @@ const Navbar = () => {
   const closeMenu = () => {
     setIsOpen(false);
     setOpenDropdown(null);
+    window.scrollTo(0, 0);  // Scroll to top on menu close
   };
 
   const toggleDropdown = (menu) => {

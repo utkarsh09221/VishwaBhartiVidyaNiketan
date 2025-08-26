@@ -21,6 +21,7 @@ const FeePayment = () => {
   const [classGrade, setClassGrade] = useState("LKG");
   const [amount, setAmount] = useState(feeStructure["LKG"]);
   const [qrCodeValue, setQrCodeValue] = useState("");
+  const [qrImageUrl, setQrImageUrl] = useState("");
 
   const handleClassChange = (e) => {
     const selectedClass = e.target.value;
@@ -33,6 +34,10 @@ const FeePayment = () => {
       const upiId = "schoolupi@bank"; // Replace with actual UPI ID
       const upiLink = `upi://pay?pa=${upiId}&pn=School%20Fee&mc=1234&tid=123456&tr=987654&tn=Fee%20Payment&am=${amount}&cu=INR`;
       setQrCodeValue(upiLink);
+      const api = "https://api.qrserver.com/v1/create-qr-code/";
+      const size = "200x200";
+      const encoded = encodeURIComponent(upiLink);
+      setQrImageUrl(`${api}?size=${size}&data=${encoded}`);
     } else {
       alert("Please fill all fields to generate QR code.");
     }
@@ -74,7 +79,7 @@ const FeePayment = () => {
           {qrCodeValue && (
             <div className="mt-6">
               <h2 className="text-lg font-semibold text-gray-700">Scan to Pay</h2>
-              <QRCode value={qrCodeValue} size={200} className="mt-3 mx-auto" />
+              <img src={qrImageUrl} alt="QR Code" style={{ width: 200, height: 200 }} className="mt-3 mx-auto" />
             </div>
           )}
         </div>

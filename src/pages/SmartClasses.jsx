@@ -1,24 +1,49 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+const features = [
+  { title: 'Interactive Panels', desc: 'Touch-enabled smart boards for immersive teaching.' },
+  { title: 'Rich Content', desc: 'Animations, simulations, and videos to enhance concepts.' },
+  { title: 'Assessment Tools', desc: 'Live quizzes and polls to gauge understanding.' },
+  { title: 'Lesson Recording', desc: 'Sessions recorded for revision and absentees.' },
+];
+
 const SmartClasses = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="p-6 bg-gradient-to-r from-gray-900 to-gray-700 min-h-screen flex items-center justify-center text-gray-200"
-    >
-      <div className="max-w-3xl bg-gray-700 text-gray-200 p-8 rounded-xl shadow-xl border-2 border-gray-500 text-center">
-        <h1 className="text-4xl font-bold mb-4 text-yellow-500">Smart Classes</h1>
-        <p className="text-lg mb-6 text-gray-300">
-          Our school integrates smart class technology to make learning interactive and engaging. Equipped with state-of-the-art digital boards, projectors, and e-learning content, our smart classes provide an enhanced educational experience. Teachers use multimedia presentations, animations, and real-world applications to improve concept understanding and retention.
+    <div className="min-h-screen bg-gray-50 text-gray-900">
+      <section className="px-6 py-16 text-center bg-gradient-to-b from-white to-gray-100">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900">Smart Classes</h1>
+        <p className="mt-4 max-w-3xl mx-auto text-gray-700">
+          Interactive, technology-driven classrooms that turn learning into an engaging experience.
         </p>
-        <p className="text-lg mb-6 text-gray-300">
-          The smart classrooms foster an interactive and engaging environment, allowing students to visualize complex concepts in subjects like Science, Mathematics, and History. Our technology-driven learning approach ensures that students stay ahead with modern education trends.
-        </p>
-      </div>
-    </motion.div>
+      </section>
+
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="px-6 pb-12 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+      >
+        {features.map((f) => (
+          <div key={f.title} className="bg-white rounded-xl p-6 border border-gray-200 shadow">
+            <h3 className="text-xl font-semibold text-gray-900">{f.title}</h3>
+            <p className="text-gray-700 mt-2">{f.desc}</p>
+          </div>
+        ))}
+      </motion.section>
+
+      <section className="px-6 pb-16 max-w-5xl mx-auto">
+        <div className="bg-white rounded-2xl text-gray-900 p-8 shadow-lg border border-gray-200">
+          <h2 className="text-2xl font-bold">Benefits</h2>
+          <ul className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3 list-disc list-inside">
+            <li>Improved concept clarity and retention</li>
+            <li>Higher classroom engagement</li>
+            <li>Personalized learning pace</li>
+            <li>Easy revision via recorded content</li>
+          </ul>
+        </div>
+      </section>
+    </div>
   );
 };
 

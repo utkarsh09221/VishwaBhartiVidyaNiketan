@@ -6,6 +6,10 @@ import SmartClasses from './pages/SmartClasses'; // Importing SmartClasses compo
 import Contact from './pages/Contact'; // Contact page will be shown on /contact route
 import About from './pages/About'; // About page will be shown on /about route
 import Gallery from './pages/Gallery';
+import Syllabus from './pages/Syllabus';
+import BookList from './pages/BookList';
+import Projects from './pages/Projects';
+import Results from './pages/Results';
 import Library from './pages/Library'; // Library page will be shown on /library route
 import UniformCode from './pages/UniformCode'; // Importing UniformCode component
 import Criteria from './pages/Criteria'; // Importing Criteria component
@@ -149,6 +153,10 @@ function App() {
               <Route path="/fee-payment" element={<FeePayment />} /> {/* Route for Fee Payment */}
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/rules" element={<RulesReg />} />
+              <Route path="/syllabus" element={<Syllabus />} />
+              <Route path="/book-lists" element={<BookList />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/results" element={<Results />} />
               <Route path="/smart-classes" element={<SmartClasses />} /> 
               <Route path="/computer-lab" element={<ComputerLab />} /> 
               <Route path="/science-lab" element={<ScienceLab />} />

@@ -10,7 +10,7 @@ const Footer = () => {
         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
           <i className="fab fa-facebook icon"></i>
         </a>
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
           <i className="fab fa-youtube icon"></i>
         </a>
         {/* <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">

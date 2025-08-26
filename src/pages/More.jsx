@@ -1,35 +1,37 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const More = () => {
-  const sections = [
-    { title: "Library", description: "A well-organized library with a vast collection of books and reading resources." },
-    { title: "Smart Classes", description: "Interactive smart classes equipped with modern digital learning tools." },
-    { title: "Computer Lab", description: "State-of-the-art computer lab with the latest software and high-speed internet." },
-    { title: "Science Lab", description: "Well-equipped science lab for hands-on experiments in Physics, Chemistry, and Biology." },
-    { title: "Sports Facilities", description: "Extensive sports facilities promoting physical fitness and teamwork." },
-    { title: "Music & Arts", description: "Dedicated spaces for music, arts, and creative expression." }
-  ];
+const items = [
+  { title: 'Sports Facilities', description: 'Playgrounds, courts, and track for holistic development.' },
+  { title: 'Music & Arts', description: 'Dedicated rooms for music, dance, and fine arts.' },
+  { title: 'Transportation', description: 'Safe and reliable bus routes across the city.' },
+  { title: 'Medical Room', description: 'On-campus first-aid and tie-ups for emergencies.' },
+  { title: 'Cafeteria', description: 'Hygienic snacks and balanced meals for students.' },
+  { title: 'Counselling', description: 'Academic and personal guidance for students.' },
+];
 
+const More = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="p-6 bg-gradient-to-r from-gray-900 to-gray-700 min-h-screen text-gray-200"
-    >
-      <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-8 text-yellow-500">More Facilities</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {sections.map((section, index) => (
-            <div key={index} className="bg-gray-800 p-6 rounded-lg shadow-lg border border-gray-600 text-center">
-              <h2 className="text-2xl font-semibold mb-2 text-blue-300">{section.title}</h2>
-              <p className="text-gray-300">{section.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </motion.div>
+    <div className="min-h-screen bg-gray-50 text-gray-900">
+      <section className="px-6 py-16 text-center bg-gradient-to-b from-white to-gray-100">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900">More Facilities</h1>
+        <p className="mt-4 max-w-3xl mx-auto text-gray-700">A complete ecosystem to support learning beyond classrooms.</p>
+      </section>
+
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="px-6 pb-16 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+      >
+        {items.map((it) => (
+          <div key={it.title} className="bg-white rounded-xl p-6 border border-gray-200 shadow text-gray-900">
+            <h3 className="text-xl font-semibold">{it.title}</h3>
+            <p className="text-gray-700 mt-2">{it.description}</p>
+          </div>
+        ))}
+      </motion.section>
+    </div>
   );
 };
 

@@ -10,14 +10,17 @@ const ScrollToTop = () => {
       window.history.scrollRestoration = 'manual';
     }
 
-    // Scroll to top with offset for fixed navbar height (80px)
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'auto'
-    });
-    // Scroll down by 80px to account for fixed navbar
-    window.scrollBy(0, -80);
+    const scrollToTopNow = () => {
+      window.scrollTo(0, 0);
+      document.body.scrollTop = 0; // Safari
+      document.documentElement.scrollTop = 0; // Chrome/Firefox/Edge
+    };
+
+    // Attempt multiple times to cover mobile browsers' async layout
+    scrollToTopNow();
+    requestAnimationFrame(scrollToTopNow);
+    setTimeout(scrollToTopNow, 0);
+    setTimeout(scrollToTopNow, 120);
   }, [pathname]);
 
   return null;

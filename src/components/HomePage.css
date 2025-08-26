@@ -7,28 +7,7 @@ body {
   height: 100vh;  /* Full height of the viewport */
 }
 
-/* Navbar Container */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #333;
-  padding: 1rem 2rem;
-  width: 100%;
-  position: static;
-  top: 0;
-  left: 0;
-  z-index: 999; /* Ensure navbar stays on top */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  height: 60px; /* Fixed height for navbar */
-}
-
-/* Add top padding to main content to prevent overlap */
-#main-content {
-  margin-top: 60px; /* Adjust according to navbar height */
-  flex-grow: 1; /* Takes up all available space */
-  padding: 1rem; /* Optional padding */
-}
+/* Navbar styles are managed in components/Header.css to avoid conflicts */
 
 /* Center container and make cards align side by side */
 .card-container {

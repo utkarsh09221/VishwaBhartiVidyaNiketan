@@ -68,7 +68,7 @@ const Footer = () => {
           <h3>Information For</h3>
           <ul>
             <li><Link to="/criteria">Admissions Criteria</Link></li>
-            <li><Link to="/fee-structure" >Fee Structure</Link></li>
+
             <li><Link to="/fee-payment" >Online Payment</Link></li>
           </ul>
         </div>

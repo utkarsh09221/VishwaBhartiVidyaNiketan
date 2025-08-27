@@ -13,7 +13,7 @@ import Results from './pages/Results';
 import Library from './pages/Library'; // Library page will be shown on /library route
 import UniformCode from './pages/UniformCode'; // Importing UniformCode component
 import Criteria from './pages/Criteria'; // Importing Criteria component
-import FeeStructure from './pages/FeeStructure'; // Importing FeeStructure component
+
 import FeePayment from './pages/FeePayment'; // Importing FeePayment component
 import Navbar from './components/Header.jsx'; // Explicitly referencing the Header.jsx file
 import Footer from './components/Footer';
@@ -149,7 +149,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/uniform" element={<UniformCode />} /> {/* Route for Uniform Code */}
               <Route path="/criteria" element={<Criteria />} /> {/* Route for Admission Criteria */}
-              <Route path="/fee-structure" element={<FeeStructure />} /> {/* Route for Fee Structure */}
+
               <Route path="/fee-payment" element={<FeePayment />} /> {/* Route for Fee Payment */}
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/rules" element={<RulesReg />} />

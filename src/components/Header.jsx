@@ -56,7 +56,7 @@ const Navbar = () => {
             </button>
             <ul className={`dropdown-menu ${openDropdown === "admission" ? "show" : ""}`}>
               <li><Link to="/criteria" onClick={closeMenu}>Criteria</Link></li>
-              <li><Link to="/fee-structure" onClick={closeMenu}>Fee Structure</Link></li>
+
               <li><Link to="/fee-payment" onClick={closeMenu}>Online Payment</Link></li>
               <li><Link to="/uniform" onClick={closeMenu}>Uniform Code</Link></li>
               <li><Link to="/rules" onClick={closeMenu}>Rules & Regulations</Link></li>

@@ -1,0 +1,145 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Arial', sans-serif;
+  
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Preloader styling */
+#preloader {
+  background: url('../assets/headerImage.jpg') no-repeat center center;
+  background-color: antiquewhite;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* Title Animation */
+.title {
+  padding-left: 1em;
+  grid-column: 1 / -1;
+  grid-row: 1;
+  font-family: "Prata", serif;
+  font-size: clamp(24px, 8vw, 72px); /* Scales between small and large screens */
+  width: 100%;
+  max-width: 100%;
+  text-align: center; /* Ensures text is centered */
+  z-index: 2;
+}
+
+.title-inner {
+  display: inline-block;
+}
+
+@keyframes text-clip {
+  from {
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes outer-left {
+  from {
+    transform: translateX(50%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes inner-left {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+.cafe,
+.mozart {
+  animation: outer-left 1s 1s cubic-bezier(0.5, 0, 0.1, 1) both;
+}
+
+.cafe-inner {
+  display: inline-block;
+  animation: inner-left 1s 1s ease both,
+             text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+}
+
+.mozart-inner {
+  animation: text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+}
+
+body.loaded #preloader {
+  display: none;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    overflow-x: hidden;
+  }
+
+  #preloader {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #preloader img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    z-index: -1; /* Ensure it stays in the background if needed */
+  }
+
+
+  .title {
+    font-size: 6vw;
+    line-height: 1.2;
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  .title-inner, .cafe-inner, .mozart-inner {
+    font-size: 5vw;
+    padding: 0;
+    margin: 0;
+  }
+}
